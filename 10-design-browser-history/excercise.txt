@@ -1,0 +1,14 @@
+PR: Add BrowserHistory for the embedded help viewer
+Summary
+This change adds a BrowserHistory class that models a single browser tab with back and forward navigation.
+
+Expected behavior
+BrowserHistory(homepage) starts the tab on homepage. URLs are non-empty strings.
+visit(url) navigates from the current page to url. It clears all forward history: pages that could previously be reached with forward() are discarded.
+back(steps) moves back up to steps pages. If fewer than steps pages are available, it moves back as far as possible (to the homepage). It returns the current URL after moving.
+forward(steps) moves forward up to steps pages. If fewer than steps pages are available, it moves forward as far as possible. It returns the current URL after moving.
+back() and forward() never raise for large step counts (steps is between 1 and 100).
+Visiting the same URL more than once is allowed; each visit is a separate history entry.
+visit, back and forward should each run in O(1) amortised time apart from O(steps) movement.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

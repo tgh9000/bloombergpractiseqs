@@ -1,0 +1,15 @@
+PR: Add vertical order traversal for the org-chart renderer
+Summary
+This change adds vertical_traversal(root), which returns the values of a binary tree grouped into vertical columns.
+
+Expected behavior
+Each node has a position (row, col). The root is at (0, 0). A left child of a node at (row, col) is at (row + 1, col - 1); a right child is at (row + 1, col + 1).
+The result is a list of columns, ordered from the leftmost column to the rightmost column.
+Each column is a list of node values ordered from top to bottom (by increasing row).
+If two or more nodes share the same row and the same column, they are ordered by value, smallest first.
+An empty tree (root is None) returns an empty list.
+The tree has 0 to 1000 nodes and node values are integers in the range 0 to 1000. Values are not necessarily unique.
+The function must handle any tree shape up to 1000 nodes, including a completely skewed tree (a single chain of 1000 nodes), without raising an error.
+The tree must not be modified.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

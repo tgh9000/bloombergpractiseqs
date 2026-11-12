@@ -1,0 +1,14 @@
+PR: Add ArrayShuffler for randomised playlist ordering
+Summary
+This change adds an ArrayShuffler class that produces random orderings of a list and can restore its original order.
+
+Expected behavior
+ArrayShuffler(nums, rng=None) stores the list nums (0 to 50 unique integers). rng is an optional random.Random instance used for all randomness so tests can be reproducible; if it is None, a new random.Random() is used.
+shuffle() returns a random permutation of the original elements. Every one of the n! permutations must be equally likely (a uniform shuffle such as Fisher-Yates).
+Calling shuffle() several times in a row must keep returning uniformly random permutations.
+reset() returns the elements in their original order, exactly as they were passed to the constructor, no matter how many times shuffle() was called before.
+The caller's nums list must never be modified by the class.
+Lists returned by shuffle() and reset() belong to the caller: modifying them must not change the shuffler's state or the results of later calls.
+Each call to shuffle() and reset() should run in O(n) time.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

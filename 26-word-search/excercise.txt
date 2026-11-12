@@ -1,0 +1,13 @@
+PR: Add word finder for the letter-grid puzzle
+Summary
+This change adds exist(board, word), which reports whether word can be traced on a grid of letters.
+
+Expected behavior
+board is an m x n list of lists of single-character strings (1 <= m, n <= 6), containing only uppercase and lowercase English letters. word has 1 to 15 letters.
+The word is traced by starting on any cell and moving to a horizontally or vertically adjacent cell for each following letter. Diagonal moves are not allowed.
+The same cell may NOT be used more than once while tracing a single word.
+Letters are case-sensitive ('a' does not match 'A').
+The function returns True if the word can be traced and False otherwise.
+The board must be unchanged after the call returns (it may be modified temporarily during the search, but must be restored).
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

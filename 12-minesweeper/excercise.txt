@@ -1,0 +1,16 @@
+PR: Add click handling for the Minesweeper mini-game
+Summary
+This change adds update_board(board, click), which applies one click to a Minesweeper board and returns the updated board.
+
+Expected behavior
+board is an m x n list of lists of single-character strings, with 1 <= m, n <= 50:
+'M' is an unrevealed mine, 'E' is an unrevealed empty square, 'B' is a revealed blank square with no adjacent mines, '1' to '8' is a revealed square showing how many mines are adjacent to it, and 'X' is a revealed mine.
+Adjacent means any of the 8 surrounding squares (horizontal, vertical and diagonal).
+click is [row, col] and always points at an unrevealed square ('M' or 'E').
+If a mine 'M' is clicked, it becomes 'X' and nothing else changes.
+If an 'E' with at least one adjacent mine is clicked, it becomes the digit for its number of adjacent mines and nothing else changes.
+If an 'E' with no adjacent mines is clicked, it becomes 'B' and all of its 8 adjacent unrevealed squares are revealed using the same rules, recursively. Revealing never turns a mine into 'X'.
+The board is updated in place and the same board object is returned.
+The function must handle the largest allowed board (50 x 50) without crashing.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

@@ -1,0 +1,14 @@
+PR: Add flattening for nested comment threads
+Summary
+This change adds flatten(head). The input is a doubly linked list of Node objects. Besides next and prev pointers, each node has a child pointer that may point to the head of a separate doubly linked list. Child lists may have their own children, forming a multilevel structure. The function flattens everything into a single-level doubly linked list.
+
+Expected behavior
+When a node has a child list, the entire flattened child list is inserted immediately after that node and before the node's original next node.
+Nesting is handled at every depth: a child's own children are flattened in the same way.
+After flattening, every node's child pointer is None.
+The result is a valid doubly linked list: for every node X with X.next = Y, Y.prev must be X. The head's prev is None and the last node's next is None.
+Walking backwards via prev from the last node must visit exactly the same nodes as walking forwards, in reverse order.
+The list is flattened in place (no new nodes are created) and the original head is returned.
+flatten(None) returns None. The structure contains 0 to 1000 nodes.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

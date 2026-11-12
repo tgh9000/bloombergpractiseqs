@@ -1,0 +1,13 @@
+PR: Add subset generator for the feature-flag combination tester
+Summary
+This change adds subsets(nums), which returns every subset (the power set) of a list of unique integers.
+
+Expected behavior
+nums contains 0 to 10 unique integers in the range -10 to 10.
+The result contains every possible subset exactly once, including the empty subset and the full list. For n elements there are exactly 2^n subsets.
+Each subset is returned as a list; no duplicate subsets may appear.
+The order of the subsets in the result, and the order of elements inside each subset, does not matter.
+Every subset in the result must be an independent list: modifying one returned subset must not change any other subset.
+The input list must not be modified.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

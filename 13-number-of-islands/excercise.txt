@@ -1,0 +1,14 @@
+PR: Add island counter for the satellite map analyser
+Summary
+This change adds num_islands(grid), which counts the islands on a map grid.
+
+Expected behavior
+grid is an m x n list of lists of the strings "1" (land) and "0" (water), with 0 <= m, n <= 300. The grid is not necessarily square: it may be wider than it is tall, or taller than it is wide.
+An island is a group of land cells connected horizontally or vertically. Diagonal neighbours are NOT connected.
+Everything outside the grid is water.
+The function returns the number of islands.
+An empty grid ([]) returns 0.
+The input grid must not be modified.
+The solution should run in O(m * n) time and must not hit Python's recursion limit on a 300 x 300 grid that is all land.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

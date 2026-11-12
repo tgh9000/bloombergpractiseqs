@@ -1,0 +1,16 @@
+PR: Add BST validation for the order book index
+Summary
+This change adds is_valid_bst(root), which checks whether a binary tree is a valid binary search tree.
+
+Expected behavior
+A tree is a valid binary search tree if, for every node:
+- every value in the node's entire left subtree is strictly less than the node's value,
+- every value in the node's entire right subtree is strictly greater than the node's value,
+- and both subtrees are themselves valid binary search trees.
+The ordering rule applies to all descendants, not only to direct children (for example, a node deep in the right subtree of the root must still be greater than the root).
+Duplicate values are not allowed: a value equal to an ancestor's value on either side makes the tree invalid.
+An empty tree (root is None) and a single-node tree are valid.
+The tree has 0 to 10^4 nodes with integer values in the range -2^31 to 2^31 - 1, including the extreme values themselves.
+The tree must not be modified, and the check should run in O(n) time.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

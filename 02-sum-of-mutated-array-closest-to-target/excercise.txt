@@ -1,0 +1,15 @@
+PR: Add cap value finder for allocation rebalancing
+Summary
+This change adds find_best_value(arr, target). It chooses a single integer cap: every element of arr that is greater than the cap is replaced by the cap, and the cap is chosen so that the sum of the capped array is as close as possible to target.
+
+Expected behavior
+arr is a non-empty list of integers with 1 <= len(arr) <= 10^4 and 1 <= arr[i] <= 10^5. target is an integer with 1 <= target <= 10^5.
+For a candidate value v, the capped sum is sum(min(x, v) for x in arr).
+The function returns the integer v that minimises abs(capped sum - target).
+If several values produce the same minimum absolute difference, the smallest of those values is returned.
+The returned value does not have to be an element of arr.
+If sum(arr) is already less than or equal to target, the result is max(arr) (the smallest cap that leaves the array unchanged).
+The return value is an int, and the input list must not be modified.
+The solution should run in O(n log n) time or better.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

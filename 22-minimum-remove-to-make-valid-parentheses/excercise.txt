@@ -1,0 +1,13 @@
+PR: Add parenthesis repair for the formula editor
+Summary
+This change adds min_remove_to_make_valid(s), which deletes the smallest possible number of '(' and ')' characters from s so that the remaining string has valid parentheses.
+
+Expected behavior
+s has 1 to 10^5 characters, each of which is '(', ')' or a lowercase English letter.
+A string has valid parentheses if it contains no parentheses, or every ')' closes an earlier unmatched '(' and every '(' is eventually closed.
+The result must be valid, and it must be obtained from s by deleting only parenthesis characters (letters are never removed, and the relative order of the remaining characters is unchanged).
+The number of deleted characters must be the minimum possible.
+If several valid results use the minimum number of deletions, any one of them is acceptable.
+The solution should run in O(n) time.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

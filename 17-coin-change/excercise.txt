@@ -1,0 +1,15 @@
+PR: Add minimum coin calculator for the change dispenser
+Summary
+This change adds coin_change(coins, amount), which returns the fewest coins needed to make up an amount.
+
+Expected behavior
+coins is a list of 1 to 12 distinct positive integer denominations (1 <= coins[i] <= 2^31 - 1), given in any order. amount is an integer with 0 <= amount <= 10^4.
+There is an unlimited supply of every denomination.
+The function returns the minimum number of coins whose values add up to exactly amount.
+If amount cannot be made from the given coins, the function returns -1.
+If amount is 0, the function returns 0.
+The answer must be optimal for every coin system, not only for "canonical" systems such as [1, 5, 10, 25].
+The input list must not be modified.
+The solution should run in O(len(coins) * amount) time.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

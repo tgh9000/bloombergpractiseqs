@@ -1,0 +1,15 @@
+PR: Add shortest word ladder length for the word game service
+Summary
+This change adds ladder_length(begin_word, end_word, word_list). A transformation sequence goes from begin_word to end_word by changing exactly one letter at a time, where every intermediate word and the final word must appear in word_list. The function returns the number of words in the shortest such sequence.
+
+Expected behavior
+All words consist only of lowercase English letters 'a' to 'z' and all have the same length (1 to 10 characters). word_list contains 1 to 5000 unique words. begin_word is different from end_word.
+Two words are adjacent if they differ in exactly one position. Any letter from 'a' to 'z' may be substituted.
+begin_word does not need to be in word_list.
+end_word must be in word_list; if it is not, no sequence exists and the function returns 0.
+The returned count includes both begin_word and end_word (for example hit -> hot -> dot -> dog -> cog has length 5).
+If no transformation sequence exists, return 0.
+Each word may be used at most once in a sequence. The input list must not be modified.
+The solution should be a breadth-first search running in roughly O(N * L * 26) time, where N is the number of words and L the word length.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

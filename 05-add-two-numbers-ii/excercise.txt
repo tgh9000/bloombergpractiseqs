@@ -1,0 +1,13 @@
+PR: Add big-number addition for linked digit lists (most significant digit first)
+Summary
+This change adds add_two_numbers(l1, l2). Each argument is a singly linked list of ListNode objects representing a non-negative integer, with the most significant digit stored in the head node. The function returns a new linked list, in the same format, representing the sum.
+
+Expected behavior
+Each list contains between 1 and 100 nodes, and every node value is a single digit from 0 to 9.
+Inputs have no leading zeros, except for the number 0 itself, which is a single node with value 0.
+The result is the sum of the two numbers, most significant digit first, with no leading zeros (0 is a single node with value 0).
+A carry out of the most significant digit must produce an extra leading digit (for example 5 + 5 gives 1 -> 0).
+The input lists must not be modified in any way: after the call, both inputs must still have the same nodes, values and next links as before.
+The result must be built from new nodes; it must not share nodes with either input.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

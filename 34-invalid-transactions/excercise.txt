@@ -1,0 +1,15 @@
+PR: Add suspicious transaction detector for the payments audit
+Summary
+This change adds invalid_transactions(transactions), which returns every transaction that is possibly invalid.
+
+Expected behavior
+Each transaction is a string "name,time,amount,city": name and city are 1 to 10 lowercase English letters, time is an integer number of minutes (0 to 1000) and amount is an integer (0 to 2000). There are 1 to 1000 transactions.
+A transaction is possibly invalid if either:
+- its amount exceeds $1000 (strictly greater than 1000; an amount of exactly 1000 is fine), or
+- it occurs within (and including) 60 minutes of another transaction with the same name in a different city. Two times t1 and t2 are within 60 minutes if abs(t1 - t2) <= 60.
+A transaction can be invalid for either reason, or both; it is still returned only once per occurrence.
+The input may contain identical transaction strings. Each occurrence is judged separately and, if invalid, appears in the result once per occurrence.
+Transactions are returned as their original strings, in any order.
+The input list must not be modified.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

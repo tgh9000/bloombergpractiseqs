@@ -1,0 +1,13 @@
+PR: Add longest unique run metric for the session log analyser
+Summary
+This change adds length_of_longest_substring(s), which returns the length of the longest substring of s that contains no repeated characters.
+
+Expected behavior
+s has 0 to 5 * 10^4 characters, which may be English letters, digits, symbols and spaces.
+A substring is a contiguous block of characters (not a subsequence).
+Characters are compared exactly: 'a' and 'A' are different, and a space is a character like any other.
+The function returns the length (an int) of the longest substring in which every character appears at most once.
+An empty string returns 0.
+The solution must run in O(n) time (a sliding window), not O(n^2).
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

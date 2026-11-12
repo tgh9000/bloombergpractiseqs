@@ -1,0 +1,13 @@
+PR: Add interview travel cost optimiser
+Summary
+This change adds two_city_sched_cost(costs). A company is flying 2n people to interviews. costs[i] = [a_cost, b_cost] is the cost of flying person i to city A or to city B. The function returns the minimum total cost such that exactly n people fly to city A and exactly n people fly to city B.
+
+Expected behavior
+costs has an even length 2n with 2 <= 2n <= 100, and every cost is an integer between 1 and 1000.
+Every person flies to exactly one city.
+Exactly half of the people go to city A and exactly half go to city B.
+The function returns the minimum possible total cost under those rules.
+The caller's costs list (and the inner pairs) must not be modified or reordered.
+The solution should run in O(n log n) time.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

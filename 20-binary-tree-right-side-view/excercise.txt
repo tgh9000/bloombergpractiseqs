@@ -1,0 +1,13 @@
+PR: Add right side view for the hierarchy visualiser
+Summary
+This change adds right_side_view(root). Imagine standing on the right side of a binary tree: the function returns the values of the nodes you can see, ordered from top to bottom.
+
+Expected behavior
+For every level (depth) of the tree, the result contains exactly one value: the value of the rightmost node on that level.
+The rightmost node on a level is not necessarily in the root's right subtree. If the left subtree is deeper than the right subtree, the deeper levels are seen through the left subtree.
+The length of the result equals the height of the tree (number of levels).
+An empty tree (root is None) returns an empty list.
+The tree has 0 to 100 nodes with integer values in the range -100 to 100.
+The tree must not be modified.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

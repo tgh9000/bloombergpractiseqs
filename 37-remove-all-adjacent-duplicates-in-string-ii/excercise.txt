@@ -1,0 +1,13 @@
+PR: Add k-duplicate removal for the log de-noising step
+Summary
+This change adds remove_duplicates(s, k). A k-duplicate removal deletes k adjacent, equal letters from s, joining the left and right parts of the string together. The function repeatedly makes k-duplicate removals until no more can be made, and returns the final string.
+
+Expected behavior
+s has 1 to 10^5 lowercase English letters, and k is an integer with 2 <= k <= 10^4.
+Only runs of exactly k equal adjacent letters are removed at a time. A run of length r >= k loses k letters per removal, so r % k letters of that run remain (if no further merges happen).
+Removals cascade: after a removal, letters that become adjacent may form a new run of k equal letters, which must then be removed as well. The process continues until no run of k equal adjacent letters remains.
+The final answer is unique regardless of the order in which removals are made.
+If every letter is removed, the result is an empty string.
+The solution should run in O(n) time.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

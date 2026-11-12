@@ -1,0 +1,14 @@
+PR: Add LRUCache for the market data quote service
+Summary
+This change adds an LRUCache class: a fixed-capacity key-value cache that evicts the least recently used entry when it is full.
+
+Expected behavior
+LRUCache(capacity) creates an empty cache. capacity is a positive integer (1 to 3000). Keys and values are non-negative integers.
+get(key) returns the value stored for key, or -1 if key is not in the cache.
+put(key, value) stores value for key. If key already exists, its value is updated. If key is new and the cache already holds capacity entries, the least recently used entry is evicted before the new entry is added.
+An entry is "used" whenever it is read by a successful get() or written by put() (both inserting a new key and updating an existing key). The least recently used entry is the one whose last use is the oldest.
+A get() for a missing key does not change the usage order.
+The cache never holds more than capacity entries.
+get and put must each run in O(1) average time.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

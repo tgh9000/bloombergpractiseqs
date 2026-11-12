@@ -1,0 +1,16 @@
+PR: Add deep copy for linked lists with random pointers
+Summary
+This change adds copy_random_list(head). Each Node has a val, a next pointer, and a random pointer that may point to any node in the same list or be None. The function returns a deep copy of the list.
+
+Expected behavior
+The list has 0 to 1000 nodes with integer values in the range -10^4 to 10^4. Values are not necessarily unique.
+The copy consists of exactly n brand-new nodes, one for each original node.
+For every original node X with copy X', X'.val == X.val.
+If X.next is Y, then X'.next must be Y' (the copy of Y); if X.next is None, X'.next is None.
+If X.random is Y, then X'.random must be Y' (the copy of Y), not Y itself; if X.random is None, X'.random is None.
+No pointer in the copied list (next or random) may point to a node of the original list.
+The original list must be unchanged after the call: every original node keeps its val, next and random.
+copy_random_list(None) returns None.
+The solution should run in O(n) time.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

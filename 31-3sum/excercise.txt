@@ -1,0 +1,14 @@
+PR: Add zero-sum triplet finder for portfolio hedging checks
+Summary
+This change adds three_sum(nums), which returns every distinct triplet of values from nums that adds up to zero.
+
+Expected behavior
+nums contains 0 to 3000 integers in the range -10^5 to 10^5, and may contain duplicates.
+A triplet [a, b, c] uses three different positions i, j, k of nums (i, j, k all distinct) with nums[i] + nums[j] + nums[k] == 0.
+The result must not contain duplicate triplets: two triplets are duplicates if they contain the same values, regardless of order. Each distinct triplet appears exactly once, even if it can be formed from several different index combinations.
+The order of the triplets in the result, and the order of values inside each triplet, does not matter.
+If no triplet sums to zero, return an empty list.
+The input list must not be modified.
+The solution should run in O(n^2) time.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

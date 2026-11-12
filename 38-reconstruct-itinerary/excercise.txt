@@ -1,0 +1,14 @@
+PR: Add itinerary reconstruction for the travel booking audit
+Summary
+This change adds find_itinerary(tickets). Each ticket is a pair [from, to] of airport codes. The function reconstructs a trip, starting at "JFK", that uses every ticket exactly once.
+
+Expected behavior
+tickets contains 1 to 300 pairs. Airport codes are three uppercase English letters, and from != to for every ticket. The same ticket (same from and to) may appear more than once; each copy must be used exactly once.
+The itinerary always begins at "JFK".
+The result is a list of airport codes of length len(tickets) + 1, where each consecutive pair corresponds to exactly one ticket, and every ticket is used exactly once.
+At least one valid itinerary that uses all tickets is guaranteed to exist.
+If more than one valid itinerary exists, return the one that is smallest in lexical order when read as a single string (for example ["JFK", "LGA"] comes before ["JFK", "LGB"]).
+Choosing the lexically smallest next airport at each step is not enough on its own: the itinerary must still use every ticket, even if the smallest choice leads to a dead end.
+The input list must not be modified.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

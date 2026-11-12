@@ -1,0 +1,14 @@
+PR: Add frequency-based character sort for the text analytics tool
+Summary
+This change adds frequency_sort(s), which rearranges the characters of a string so that the most frequent characters come first.
+
+Expected behavior
+s is a string of 0 to 5 * 10^5 printable ASCII characters (letters, digits, spaces and punctuation).
+The result contains exactly the same characters as s, with the same counts.
+Characters are ordered by decreasing frequency, and all copies of a character appear next to each other.
+Characters are case-sensitive: 'A' and 'a' are different characters and are counted separately.
+When two characters have the same frequency, the one whose first occurrence in s is earlier comes first in the result.
+An empty string returns an empty string.
+The solution should run in O(n log n) time or better.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

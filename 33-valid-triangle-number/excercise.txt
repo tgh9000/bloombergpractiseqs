@@ -1,0 +1,15 @@
+PR: Add triangle triplet counter for the geometry validation tool
+Summary
+This change adds triangle_number(nums), which counts how many triplets of values from nums could be the side lengths of a triangle.
+
+Expected behavior
+nums contains 0 to 1000 integers with 0 <= nums[i] <= 1000, and may contain duplicates.
+A triplet is a choice of three different positions i < j < k. Triplets at different positions are counted separately even if they have the same values.
+Three lengths a, b, c form a triangle only if the sum of every two sides is strictly greater than the third side (a + b > c, a + c > b and b + c > a).
+Degenerate triangles, where two sides add up exactly to the third (for example 1, 2, 3 or 2, 2, 4), do NOT count.
+Sides of length 0 can never form a triangle.
+Lists with fewer than three elements return 0.
+The input list must not be modified.
+The solution should run in O(n^2) time.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

@@ -1,0 +1,12 @@
+PR: Add NumMatrix for fast rectangular sum queries on price grids
+Summary
+This change adds a NumMatrix class that preprocesses a 2D grid of integers once and then answers many "sum of a rectangle" queries quickly.
+
+Expected behavior
+NumMatrix(matrix) accepts a rectangular list of lists of integers with 1 <= rows, cols <= 200. Values may be negative (-10^4 <= matrix[r][c] <= 10^4).
+sum_region(row1, col1, row2, col2) returns the sum of every element inside the rectangle whose upper-left corner is (row1, col1) and lower-right corner is (row2, col2), inclusive on all sides.
+Queries satisfy 0 <= row1 <= row2 < rows and 0 <= col1 <= col2 < cols. Any such rectangle must be supported, including single cells, single rows, single columns, rectangles that do not touch row 0 or column 0, and the whole grid.
+The object is immutable: results must reflect the matrix as it was when the object was constructed, even if the caller later modifies the original list.
+Construction may take O(rows * cols) time; each sum_region call must run in O(1) time.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

@@ -1,0 +1,15 @@
+PR: Add RandomizedSet for the load balancer's server pool
+Summary
+This change adds a RandomizedSet class that supports inserting, removing and picking a random element, all in average O(1) time.
+
+Expected behavior
+RandomizedSet(rng=None) creates an empty set. rng is an optional random.Random instance used for all randomness so tests can be reproducible; if it is None, a new random.Random() is used.
+insert(val) adds val if it is not already present. It returns True if val was added and False if it was already present.
+remove(val) removes val if it is present. It returns True if val was removed and False if it was not present.
+After remove(val) returns True, val is no longer in the set: get_random() must never return it, and a later insert(val) must return True and add it again.
+get_random() returns one of the elements currently in the set. Every current element must have the same probability of being returned. It is only called when the set is non-empty.
+Removing any element must work correctly, including the most recently inserted element, the only element, and elements in the middle.
+insert, remove and get_random must each run in average O(1) time (not O(n)).
+Values are integers in the range -2^31 to 2^31 - 1.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

@@ -1,0 +1,14 @@
+PR: Add unique path counter for the warehouse robot planner
+Summary
+This change adds unique_paths(m, n). A robot starts in the top-left cell of an m x n grid (m rows, n columns) and wants to reach the bottom-right cell. On each move it can go either one cell down or one cell right. The function returns the number of distinct paths.
+
+Expected behavior
+m and n are integers with 1 <= m, n <= 100.
+Only moves down and right are allowed; the robot never leaves the grid.
+A 1 x 1 grid has exactly one path (the robot is already at the destination).
+A grid with a single row or a single column has exactly one path.
+The result does not depend on orientation: unique_paths(m, n) == unique_paths(n, m).
+The result is an exact integer (Python ints do not overflow, so no modulo is applied).
+The solution should run in O(m * n) time or better.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

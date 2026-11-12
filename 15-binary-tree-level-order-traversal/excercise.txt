@@ -1,0 +1,13 @@
+PR: Add level order traversal for the dependency tree viewer
+Summary
+This change adds level_order(root), which returns the values of a binary tree level by level.
+
+Expected behavior
+The result is a list of levels. Level 0 contains only the root, level 1 contains the root's children, and so on.
+Within each level, values appear from left to right.
+The result contains exactly one list per level that has at least one node: there are no empty levels anywhere in the result.
+An empty tree (root is None) returns an empty list.
+The tree has 0 to 2000 nodes with integer values in the range -1000 to 1000.
+The tree must not be modified, and the traversal should run in O(n) time.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

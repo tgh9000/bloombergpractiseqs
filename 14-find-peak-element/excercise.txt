@@ -1,0 +1,13 @@
+PR: Add peak finder for the signal monitoring service
+Summary
+This change adds find_peak_element(nums), which returns the index of a peak in a list of readings.
+
+Expected behavior
+nums contains 1 to 1000 integers, and adjacent values are never equal (nums[i] != nums[i + 1]).
+A peak is an element strictly greater than its neighbours. Positions outside the list are treated as negative infinity, so nums[0] only needs to be greater than nums[1], and nums[-1] only needs to be greater than nums[-2].
+The function returns the index (not the value) of any peak. If several peaks exist, returning any one of them is correct.
+A peak always exists, so the function must always return a valid peak index, including for strictly increasing lists, strictly decreasing lists and single-element lists.
+The algorithm must run in O(log n) time.
+The input list must not be modified.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

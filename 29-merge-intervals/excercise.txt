@@ -1,0 +1,14 @@
+PR: Add interval merging for the meeting-room calendar
+Summary
+This change adds merge(intervals), which merges all overlapping intervals and returns the non-overlapping intervals that cover the same ranges.
+
+Expected behavior
+intervals is a list of 1 to 10^4 pairs [start, end] with 0 <= start <= end <= 10^4. The input may be in any order.
+Two intervals overlap if they share at least one point. Intervals that only touch at an endpoint, such as [1, 4] and [4, 5], overlap and must be merged into [1, 5].
+An interval completely contained in another, such as [2, 3] inside [1, 10], is absorbed by it.
+The result is a list of [start, end] lists, sorted by start, with no two intervals overlapping.
+Every point covered by some input interval is covered by exactly one output interval, and no other points are covered.
+The caller's intervals list (and the inner lists) must not be modified or reordered.
+The solution should run in O(n log n) time.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

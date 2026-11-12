@@ -1,0 +1,13 @@
+PR: Add minimum lookup for rotated sorted buffers
+Summary
+This change adds find_min(nums). nums is a list that was sorted in strictly ascending order and then rotated between 1 and n times (rotating [a0, a1, ..., a(n-1)] once gives [a(n-1), a0, ..., a(n-2)]). The function returns the smallest element.
+
+Expected behavior
+All values in nums are unique integers (-5000 <= nums[i] <= 5000) and len(nums) is between 0 and 5000.
+The function returns the minimum value (not its index).
+It must work for every possible rotation, including a rotation by n (the list is fully sorted), a list of one element, and lists of two elements in either order.
+The algorithm must run in O(log n) time.
+An empty list is invalid input and must raise ValueError.
+The input list must not be modified.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

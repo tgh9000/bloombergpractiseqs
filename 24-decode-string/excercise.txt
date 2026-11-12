@@ -1,0 +1,15 @@
+PR: Add run-length template decoder for the report generator
+Summary
+This change adds decode_string(s), which expands an encoded string. The encoding rule is k[encoded_string]: the encoded_string inside the brackets is repeated exactly k times.
+
+Expected behavior
+s has 1 to 30 characters and contains only lowercase English letters, digits and square brackets.
+s is always a valid encoding: brackets are balanced, and every '[' is immediately preceded by a positive integer k.
+k is a positive integer between 1 and 300 and may have more than one digit (for example 10[a] or 100[ab]).
+Digits only ever appear as repeat counts; the decoded text itself never contains digits.
+Encodings can be nested (for example 3[a2[c]] decodes to accaccacc) and can be adjacent to plain letters (for example ab2[c]d).
+Letters outside any brackets are copied to the output unchanged.
+An encoded group with empty contents decodes to an empty string.
+The length of the decoded output is at most 10^5.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

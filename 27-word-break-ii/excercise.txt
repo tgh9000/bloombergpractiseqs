@@ -1,0 +1,15 @@
+PR: Add sentence segmentation for the ticker-symbol search box
+Summary
+This change adds word_break(s, word_dict), which inserts spaces into s to build every possible sentence where each word is in word_dict.
+
+Expected behavior
+s has 1 to 20 lowercase English letters. word_dict contains 0 to 1000 unique lowercase words, each 1 to 10 letters long.
+A sentence is a sequence of dictionary words that, when concatenated without spaces, equals s exactly.
+The same dictionary word may be used any number of times in a sentence.
+Any dictionary word may be used, including the longest word(s) in the dictionary.
+Each sentence is returned as a single string with words separated by exactly one space and no leading or trailing spaces.
+The function returns all possible sentences, each exactly once, in any order.
+If no sentence is possible (including when word_dict is empty), the function returns an empty list.
+The input list must not be modified.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.

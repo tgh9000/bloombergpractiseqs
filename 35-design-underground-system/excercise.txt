@@ -1,0 +1,16 @@
+PR: Add UndergroundSystem for journey time analytics
+Summary
+This change adds an UndergroundSystem class that records passenger check-ins and check-outs and reports average travel times between stations.
+
+Expected behavior
+check_in(id, station_name, t): passenger id checks in at station_name at time t. A passenger can only be checked in to one place at a time.
+check_out(id, station_name, t): passenger id, who is currently checked in, checks out at station_name at time t. This completes one journey from the check-in station to station_name taking (t - check-in time).
+After checking out, the passenger is no longer checked in and may later check in again (the same id can make many journeys).
+get_average_time(start_station, end_station) returns the average travel time, as a float, over every completed journey that went directly from start_station to end_station.
+Direction matters: journeys from A to B are tracked separately from journeys from B to A. get_average_time(A, B) only includes journeys that started at A and ended at B.
+The average must be exact (for example, journeys of 5, 6 and 9 minutes average 6.666..., not 6).
+get_average_time is only called for station pairs with at least one completed journey.
+Station names are 1 to 10 English letters and digits. Times are integers from 0 to 10^6, and check-out time is always after check-in time.
+Every method should run in O(1) average time.
+Review task
+Review the proposed implementation and its tests against the behavior above. Make the necessary corrections in the implementation and tests. Run the test suite and explain which cases give you confidence in the result.
